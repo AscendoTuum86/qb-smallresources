@@ -1,10 +1,35 @@
 Teleports = Teleports or {}
 Teleports.Locations = {
-    [1] = {
+    [1] = { -- Humane Labs
         [1] = {x = 3540.74, y = 3675.59, z = 20.99, h = 167.5, r = 1.0},
         [2] = {x = 3540.74, y = 3675.59, z = 28.11, h = 172.5, r = 1.0},
-    }
+    },
+    [2] = { -- Integrity Elevator 1
+        [1] = {x = 284.53, y = -641.26, z = 42.01, h = 163.5, r = 1.0},
+        [2] = {x = 270.34, y = -649.95, z = 4.64, h = 248.5, r = 1.0},
+    },
+    [3] = { -- Integrity Elevator 2
+        [1] = {x = 288.15, y = -642.75, z = 62.01, h = 170.5, r = 1.0},
+        [2] = {x = 271.8, y = -646.33, z = 4.64, h = 253.5, r = 1.0},
+    },
+    [4] = { -- Integrity Elevator 3
+        [1] = {x = 291.81, y = -644.14, z = 42.01, h = 168.5, r = 1.0},
+        [2] = {x = 273.2, y = -642.66, z = 4.64, h = 264.5, r = 1.0},
+    },
+    [5] = { -- Integrity Elevator 4
+        [1] = {x = 280.77, y = -652.0, z = 42.01, h = 338.5, r = 1.0},
+        [2] = {x = 270.34, y = -649.95, z = 4.64, h = 248.5, r = 1.0},
+    },
+    [6] = { -- Integrity Elevator 5
+        [1] = {x = 284.37, y = -653.29, z = 42.01, h = 334.5, r = 1.0},
+        [2] = {x = 271.8, y = -646.33, z = 4.64, h = 253.5, r = 1.0},
+    },
+    [7] = { -- Integrity Elevator 6
+        [1] = {x = 288.1, y = -654.76, z = 42.01, h = 335.5, r = 1.0},
+        [2] = {x = 273.2, y = -642.66, z = 4.64, h = 264.5, r = 1.0},
+    },
 }
+
 JustTeleported = false
 
 function DrawText3Ds(x, y, z, text)
@@ -36,7 +61,7 @@ Citizen.CreateThread(function()
                     DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
 
                     if dist < 1 then
-                        DrawText3Ds(v.x, v.y, v.z, '[E] To Teleport')
+                        DrawText3Ds(v.x, v.y, v.z, '[E] To take the Elevator')
                         if IsControlJustReleased(0, 51) then
                             if k == 1 then
                                 SetEntityCoords(ped, Teleports.Locations[loc][2].x, Teleports.Locations[loc][2].y, Teleports.Locations[loc][2].z)
